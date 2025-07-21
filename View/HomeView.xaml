@@ -1,0 +1,274 @@
+﻿<UserControl x:Class="ZooMania.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZooMania.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!-- 1 okno - wiersz1 -->
+        <Border Grid.Column="0"
+                Grid.Row="0"
+                Background="{StaticResource color2}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+
+                <fa:IconImage Icon="UserGroup" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfCustomers"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+
+            </StackPanel>
+
+
+        </Border>
+        <!-- 2 okno - wiersz1 -->
+        <Border Grid.Column="1"
+                Grid.Row="0"
+                Background="{StaticResource color3}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+
+                <fa:IconImage Icon="Truck" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfOrders"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+                
+            </StackPanel>
+
+        </Border>
+        <!-- 3 okno - wiersz1 -->
+        <Border Grid.Column="2" 
+                Grid.Row="0"
+                Background="{StaticResource color4}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+
+                <fa:IconImage Icon="ShoppingBag" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfProducts"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+
+            </StackPanel>
+
+
+        </Border>
+        <!-- 1 okno - wiersz2 -->
+        <Border Grid.Column="0"
+                Grid.Row="1"
+                Background="{StaticResource color9}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+
+                <fa:IconImage Icon="Paw" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfCategories"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+
+            </StackPanel>
+
+        </Border>
+        <!-- 2 okno - wiersz2 -->
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                Background="{StaticResource color5}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+                <fa:IconImage Icon="Box" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfStorage"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+            </StackPanel>
+            
+
+        </Border>
+        <!-- 3 okno - wiersz2 -->
+        <Border Grid.Column="2"
+                Grid.Row="1"
+                Background="{StaticResource color10}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+                <fa:IconImage Icon="ClipboardCheck" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfNewOrders"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+            </StackPanel>
+
+        </Border>
+
+        <!-- 1 okno - wiersz3 -->
+        <Border Grid.Column="0"
+                Grid.Row="2"
+                Background="{StaticResource color6}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+                <fa:IconImage Icon="Wallet" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbTotalProfit"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+            </StackPanel>
+
+
+        </Border>
+
+        <!-- 2 okno - wiersz3 -->
+        <Border Grid.Column="1"
+                Grid.Row="2"
+                Background="{StaticResource color7}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+                <fa:IconImage Icon="PieChart" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfOrdersTooday"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+            </StackPanel>
+
+        </Border>
+
+        <!-- 3 okno - wiersz3 -->
+        <Border Grid.Column="2"
+                Grid.Row="2"
+                Background="{StaticResource color8}"
+                CornerRadius="10" 
+                Padding="10"
+                Margin="25">
+
+            <StackPanel>
+                <fa:IconImage Icon="UsersGear" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="tbNumberOfUsers"
+                     TextAlignment="Center" 
+                     FontSize="16"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Loaded="Window_Loaded"
+                     IsReadOnly="True"
+                     Padding="10"
+                     Background="Transparent"
+                     BorderThickness="0"/>
+            </StackPanel>
+
+        </Border>
+
+
+
+    </Grid>
+</UserControl>

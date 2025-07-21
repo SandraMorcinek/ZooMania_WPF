@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="ZooMania.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZooMania.View"
+             xmlns:viewmodel="clr-namespace:ZooMania.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:SettingViewModel}"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="Window_Loaded">
+
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="20">
+            
+            <TextBlock Text="Dodaj użytkownika"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+            
+            <TextBlock Text="Login:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox Margin="0,0,0,5" Name="LoginTextBox"/>
+            
+            <TextBlock Text="Hasło:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+            
+            <TextBox Margin="0,0,0,5" Name="PasswordTextBox"/>
+            
+            <TextBlock Text="Imię:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox Margin="0,0,0,5" Name="ImieTextBox"/>
+
+            <TextBlock Text="Nazwisko:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox Margin="0,0,0,5" Name="NazwiskoTextBox"/>
+
+            <TextBlock Text="e-mail:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox Margin="0,0,0,25" Name="EmailTextBox"/>
+
+            <Button Content="Dodaj użytkowanika" Click="AddUser_Click" Style="{StaticResource GreenButton}" />
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                    Margin="20">
+
+            <TextBlock Text="Usuń użytkownika"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+            <TextBlock Text="Id:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox Margin="0,0,0,25" Name="UserIdTextBox"/>
+
+            <Button Content="Usuń użytkowanika" Click="DeleteUserButton_Click" Style="{StaticResource GreenButton}"/>
+
+            <StackPanel Margin="0,70,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <TextBlock Text="Dodaj zdjęcie użytkownika"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+                <TextBlock Text="Wybierz użytkowinka:"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           Margin="0,0,0,5"/>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Id:"
+                               Foreground="White"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               Margin="0,0,10,5"/>
+
+                    <TextBox x:Name="useridfoto" Width="200"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    
+                    <Button Content="Dodaj zdjęcie" Click="btnDodajZdjecie_Click" Style="{StaticResource GreenButton}" Margin="5,15" Width="100"/>
+
+                    <Button Content="Usuń zdjęcie" Click="btnUsunZdjecie_Click" Style="{StaticResource GreenButton}" Margin="5,15" Width="100"/>
+                    
+                </StackPanel>
+
+                <Image x:Name="imgProfil" Width="150" Height="150"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Margin="20">
+
+            <Button Margin="20" Click="RefreshButton_Click" Style="{StaticResource GreenButtonStyle}">
+                <fa:IconImage Icon="Refresh" Height="20" Foreground="White"/>
+            </Button>
+
+            <TextBlock Text="Użytkownicy:"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+            <DataGrid Name="dgUsers" AutoGenerateColumns="False" Height="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Login" Binding="{Binding Username}" />
+                    <DataGridTextColumn Header="Hasło" Binding="{Binding Password}" />
+                    <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding LastName}" />
+                    <DataGridTextColumn Header="e-mail" Binding="{Binding Email}"/>
+
+                    <DataGridTemplateColumn Header="Zdjęcie">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="50" Height="50" Source="{Binding ImageData}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+            
+    </Grid>
+</UserControl>

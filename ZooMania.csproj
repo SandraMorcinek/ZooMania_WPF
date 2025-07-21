@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CustomControls\key-icon.png" />
+    <None Remove="View\logo_pies2_male.png" />
+    <None Remove="View\tlo.jpg" />
+    <None Remove="View\user-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.4" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="CustomControls\key-icon.png" />
+    <Resource Include="View\logo_pies2_male.png" />
+    <Resource Include="View\tlo.jpg" />
+    <Resource Include="View\user-icon.png" />
+  </ItemGroup>
+
+</Project>

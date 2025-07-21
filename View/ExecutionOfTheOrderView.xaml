@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="ZooMania.View.ExecutionOfTheOrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZooMania.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="25">
+
+            <TextBlock Text="Dodaj klienta"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+            <TextBlock Text="Imię"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="ImieTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Nazwisko"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="NazwiskoTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="e-mail"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="EmailTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Adres (np ul. Prosta 1)"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="AdresTextBox" Margin="0,0,0,5"/>
+            
+            <TextBlock Text="Kod-Pocztowy:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="KodTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Miasto:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="MiastoTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Kraj:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="KrajTextBox" Margin="0,0,0,5"/>
+
+            <Button Content="Dodaj klienta" Margin="15" Style="{StaticResource GreenButton}" Click="DodajKlienta_Click"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="25">
+
+            <TextBlock Text="Dodaj zamówienie"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Id klienta:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,5,10,5"/>
+
+                <TextBox x:Name="IdKlientaTextBox" Width="50" Margin="0,0,20,0"/>
+
+                <Button Content="Wyszukaj" Style="{StaticResource GreenButton}" Width="80" Click="WczytajKlienta_Click"/>
+            </StackPanel>
+
+            <TextBlock Text="Imię i Nazwisko"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,10,0,5"/>
+
+            <TextBox x:Name="ImieNazwiskoTB" Margin="0,0,0,5" IsReadOnly="True"/>
+
+            <TextBlock Text="Adres"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="AdresTB" Margin="0,0,0,5" IsReadOnly="True"/>
+
+            <TextBlock Text="e-mail"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="EmailTB" Margin="0,0,0,5" IsReadOnly="True"/>
+
+            <TextBlock Text="Produkt"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+            <ComboBox Name="cbProdukty" Margin="0,0,0,5"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,8">
+                <TextBlock Text="Koszt dostawy:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,5,10,5"/>
+
+                <ComboBox Name="cbKosztDostawy" Width="100" Margin="10,0" Height="20">
+                    <ComboBoxItem Content="0" />
+                    <ComboBoxItem Content="13" />
+                    <ComboBoxItem Content="19" />
+                    <ComboBoxItem Content="25" />
+                    <ComboBoxItem Content="120" />
+                </ComboBox>
+
+            </StackPanel>
+
+            <Button Content="Dodaj zamówienie" Margin="15" Style="{StaticResource GreenButton}" Click="DodajZamowienie_Click"/>
+
+            
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Margin="25">
+
+            <TextBlock Text="Usuń zamówienie"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Id zamówienia:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,5,10,5"/>
+
+                    <TextBox x:Name="IdOrderTB" Width="50" Margin="0,0,10,0"/>
+
+                    <Button Content="Usuń" Style="{StaticResource GreenButton}" Width="60" Click="UsunZamowienie_Click"/>
+                </StackPanel>
+
+            <StackPanel Margin="0,15">
+
+                <TextBlock Text="Status zamówienia"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Id zamówienia:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,5,10,5"/>
+
+                    <TextBox x:Name="IdZamowieniaStatusTB" Width="100" Margin="0,0,10,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,8">
+                    <TextBlock Text="Status:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,5,10,5"/>
+
+                    <ComboBox Name="cbStatus" Width="150" Margin="10,0" Height="20">
+                        <ComboBoxItem Content="Oczekujące" />
+                        <ComboBoxItem Content="W realizacji" />
+                        <ComboBoxItem Content="Wysłane" />
+                        <ComboBoxItem Content="Zakończone " />
+                        <ComboBoxItem Content="Dostarczone " />
+                        <ComboBoxItem Content="Anulowane" />
+                        <ComboBoxItem Content="Zwrócone " />
+                    </ComboBox>
+
+                </StackPanel>
+
+                <Button Content="Zmień status" Style="{StaticResource GreenButton}" Margin="15,15,15,0" Click="ZmienStatus_Click"/>
+
+            </StackPanel>
+
+            <StackPanel Margin="0,10">
+
+                <TextBlock Text="Dostawa"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Id zamówienia:"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,5,10,5"/>
+
+                    <TextBox x:Name="IdZamowieniaDataTB" Width="100" Margin="0,0,10,0"/>
+                </StackPanel>
+
+                <TextBlock Text="Data dostawy"
+                       Foreground="White"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       Margin="0,0,0,5"/>
+
+                <DatePicker Name="dpSData" SelectedDate="{Binding Data, Mode=TwoWay}" 
+                            DisplayDateStart="2020-01-01" DisplayDateEnd="2035-12-31"
+                            SelectedDateFormat="Long" />
+
+                <Button Content="Zaktualizuj" Style="{StaticResource GreenButton}" Margin="15" Click="ZaktualizujDate_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+            
+    </Grid>
+</UserControl>
